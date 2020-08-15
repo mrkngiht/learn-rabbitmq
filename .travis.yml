@@ -8,6 +8,6 @@ script:
   - yarn build
 deploy:
   provider: script
-  script: bash scripts/deploy.sh
+  script: echo 'ok'
   on:
     branch: master
