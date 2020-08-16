@@ -51,7 +51,7 @@ function getSidebarGuide () {
       collapsable: false,
       children: [
     'platforms',
-        'installing_on_debain_ubuntu',
+        'installing_on_debian_ubuntu',
       ]
     },
     {
