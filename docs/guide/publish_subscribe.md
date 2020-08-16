@@ -36,7 +36,6 @@ channel.exchange_declare(exchange='logs',
 扇型交换机（fanout）很简单，你可能从名字上就能猜测出来，它把消息发送给它所知道的所有队列。这正是我们的日志系统所需要的。
 
 > #### 交换器列表
-
 > rabbitmqctl能够列出服务器上所有的交换器：
 
 >     $ sudo rabbitmqctl list_exchanges
@@ -51,7 +50,6 @@ channel.exchange_declare(exchange='logs',
 > 这个列表中有一些叫做amq.*的交换器。这些都是默认创建的，不过这时候你还不需要使用他们。
 
 > #### 匿名的交换器
-
 > 前面的教程中我们对交换机一无所知，但仍然能够发送消息到队列中。因为我们使用了命名为空字符串("")默认的交换机。
 
 > 回想我们之前是如何发布一则消息：
@@ -100,7 +98,6 @@ channel.queue_bind(exchange='logs',
 现在，logs交换机将会把消息添加到我们的队列中。
 
 > #### 绑定（binding）列表
-
 > 你可以使用`rabbitmqctl list_bindings` 列出所有现存的绑定。
 
 ## 代码整合

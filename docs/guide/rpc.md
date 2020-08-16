@@ -19,8 +19,7 @@ result = fibonacci_rpc.call(4)
 print "fib(4) is %r" % (result,)
 ```
 
-> ####关于RPC的注意事项：
-
+>#### 关于RPC的注意事项：
 > 尽管RPC在计算领域是一个常用模式，但它也经常被诟病。当一个问题被抛出的时候，程序员往往意识不到这到底是由本地调用还是由较慢的RPC调用引起的。同样的困惑还来自于系统的不可预测性和给调试工作带来的不必要的复杂性。跟软件精简不同的是，滥用RPC会导致不可维护的[面条代码][5].
 
 > 考虑到这一点，牢记以下建议：
@@ -47,14 +46,12 @@ channel.basic_publish(exchange='',
 # ... and some code to read a response message from the callback_queue ...
 ```
 
-> ####消息属性
-
+> #### 消息属性
 > AMQP协议给消息预定义了一系列的14个属性。大多数属性很少会用到，除了以下几个：
-
-> * delivery_mode（投递模式）：将消息标记为持久的（值为2）或暂存的（除了2之外的其他任何值）。第二篇教程里接触过这个属性，记得吧？
-* content_type（内容类型）:用来描述编码的mime-type。例如在实际使用中常常使用application/json来描述JOSN编码类型。
-* reply_to（回复目标）：通常用来命名回调队列。
-* correlation_id（关联标识）：用来将RPC的响应和请求关联起来。
+>* delivery_mode（投递模式）：将消息标记为持久的（值为2）或暂存的（除了2之外的其他任何值）。第二篇教程里接触过这个属性，记得吧？
+>* content_type（内容类型）:用来描述编码的mime-type。例如在实际使用中常常使用application/json来描述JOSN编码类型。
+>* reply_to（回复目标）：通常用来命名回调队列。
+>* correlation_id（关联标识）：用来将RPC的响应和请求关联起来。
 
 ### 关联标识
 

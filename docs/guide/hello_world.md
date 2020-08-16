@@ -1,5 +1,5 @@
 # Hello World
-##介绍
+## 介绍
 
 RabbitMQ是一个消息代理。它的工作就是接收和转发消息。你可以把它想像成一个邮局：你把信件放入邮箱，邮递员就会把信件投递到你的收件人处。在这个比喻中，RabbitMQ就扮演着邮箱、邮局以及邮递员的角色。
 
@@ -18,7 +18,7 @@ RabbitMQ和邮局的主要区别在于，它处理纸张，而是接收、存储
 
 需要指出的是生产者、消费者、代理需不要待在同一个设备上；事实上大多数应用也确实不在会将他们放在一台机器上。
 
-##Hello World!
+## Hello World!
 
 **（使用pika 0.10.0 Python客户端）**
 
@@ -30,11 +30,10 @@ RabbitMQ和邮局的主要区别在于，它处理纸张，而是接收、存储
 
 生产者（producer）把消息发送到一个名为“hello”的队列中。消费者（consumer）从这个队列中获取消息。
 
->####RabbitMQ库
-
+>#### RabbitMQ库
 >RabbitMQ使用的是AMQP 0.9.1协议。这是一个用于消息传递的开放、通用的协议。针对[不同编程语言](https://www.rabbitmq.com/devtools.html)有大量的RabbitMQ客户端可用。在这个系列教程中，RabbitMQ团队推荐使用[Pika](https://pika.readthedocs.org/en/0.10.0/#)这个Python客户端。大家可以通过[pip](https://pip.pypa.io/en/stable/quickstart/)这个包管理工具进行安装：
 
-###发送
+### 发送
 
 ![](http://www.rabbitmq.com/img/tutorials/sending.png)
 
@@ -73,11 +72,10 @@ print(" [x] Sent 'Hello World!'")
 connection.close()
 ```
 
-> 发送不成功！
-
+>#### 发送不成功！
 > 如果这是你第一次使用RabbitMQ，并且没有看到“Sent”消息出现在屏幕上，你可能会抓耳挠腮不知所以。这也许是因为没有足够的磁盘空间给代理使用所造成的（代理默认需要200MB的空闲空间），所以它才会拒绝接收消息。查看一下代理的日志文件进行确认，如果需要的话也可以减少限制。[配置文件文档](http://www.rabbitmq.com/configure.html#config-items)会告诉你如何更改磁盘空间限制（disk_free_limit）。
 
-###接收
+### 接收
 
 ![](https://www.rabbitmq.com/img/tutorials/receiving.png)
 
@@ -93,8 +91,7 @@ channel.queue_declare(queue='hello')
 
 你也许要问: 为什么要重复声明队列呢 —— 我们已经在前面的代码中声明过它了。如果我们确定了队列是已经存在的，那么我们可以不这么做，比如此前预先运行了send.py程序。可是我们并不确定哪个程序会首先运行。这种情况下，在程序中重复将队列重复声明一下是种值得推荐的做法。
 
->####列出所有队列
-
+>#### 列出所有队列
 >你也许希望查看RabbitMQ中有哪些队列、有多少消息在队列中。此时你可以使用rabbitmqctl工具（使用有权限的用户）：
 >```bash
 >sudo rabbitmqctl list_queues
@@ -130,7 +127,7 @@ print(' [*] Waiting for messages. To exit press CTRL+C')
 channel.start_consuming()
 ```
 
-###将代码整合到一起
+### 将代码整合到一起
 
 **send.py的完整代码：**
 
@@ -194,7 +191,7 @@ python send.py
 # => [x] Sent 'Hello World!'
 ```
 
-**成功了！**我们已经通过RabbitMQ发送第一条消息。你也许已经注意到了，receive.py程序并没有退出。它一直在准备获取消息，你可以通过Ctrl-C来中止它。
+**成功了！** 我们已经通过RabbitMQ发送第一条消息。你也许已经注意到了，receive.py程序并没有退出。它一直在准备获取消息，你可以通过Ctrl-C来中止它。
 
 试下在新的终端中再次运行`send.py`。
 
