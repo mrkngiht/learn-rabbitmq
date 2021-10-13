@@ -14,3 +14,4 @@ features:
   details: 代码完全开源在 GitHub ，希望大家一起共建
 footer: MIT Licensed | Copyright © 2018-present @mrknight
 ---
+👬友情链接 [markdown入门教程](https://markdown.com.cn)

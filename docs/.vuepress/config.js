@@ -1,9 +1,13 @@
 const { description } = require('../../package')
 
 module.exports = {
-  lang: 'zh_CN',
-  title: 'RabbitMQ入门教程',
-  description: 'RabbitMQ入门使用教程,RabbitMQ基础性的概念知识,RabbitMQ的一些使用场景和应用教程实例。',
+locales: {
+    '/': {
+      lang:'zh-CN',
+      title:'RabbitMQ入门教程',
+      description: 'RabbitMQ入门使用教程,RabbitMQ基础性的概念知识,RabbitMQ的一些使用场景和应用教程实例。',
+    },
+  },
   head: [
     ['meta', { name: 'theme-color', content: '#3eaf7c' }],
     ['meta', { name: 'apple-mobile-web-app-capable', content: 'yes' }],
